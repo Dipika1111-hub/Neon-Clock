@@ -1,0 +1,149 @@
+ body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+      background: radial-gradient(circle at center, #000000, #001f3f);
+      font-family: "Poppins", sans-serif;
+      color: #00bfff;
+    }
+
+    .clock {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      border: 8px solid var(--neon, #00bfff);
+      border-radius: 50%;
+      box-shadow: 0 0 25px var(--neon, #00bfff), inset 0 0 15px var(--neon, #0088ff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 25px;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 10;
+      overflow: hidden;
+      transition: 0.4s;
+    }
+
+    .center {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      background: var(--neon, #00bfff);
+      border-radius: 50%;
+      z-index: 10;
+      box-shadow: 0 0 10px var(--neon, #00bfff);
+    }
+
+    .hand {
+      position: absolute;
+      bottom: 50%;
+      transform-origin: bottom;
+      background: var(--neon, #00bfff);
+      border-radius: 5px;
+      box-shadow: 0 0 10px var(--neon, #00bfff);
+      transition: 0.3s;
+    }
+
+    .hour {
+      width: 6px;
+      height: 70px;
+    }
+    .minute {
+      width: 4px;
+      height: 90px;
+    }
+    .second {
+      width: 2px;
+      height: 110px;
+      background: #ff0066;
+      box-shadow: 0 0 10px #ff0066;
+    }
+
+    .number {
+      position: absolute;
+      color: var(--neon, #00bfff);
+      font-size: 20px;
+      font-weight: 600;
+      text-shadow: 0 0 10px var(--neon, #00bfff);
+      transform: translate(-50%, -50%);
+      transition: 0.3s;
+    }
+
+    .controls {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    button, input[type="color"] {
+      background: var(--neon, #00bfff);
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      font-size: 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      box-shadow: 0 0 15px var(--neon, #00bfff);
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px var(--neon, #00bfff), 0 0 35px var(--neon, #00bfff);
+    }
+
+    .info-box, .time-box {
+      margin-top: 15px;
+      color: var(--neon, #00bfff);
+      font-size: 22px;
+      text-shadow: 0 0 10px var(--neon, #00bfff);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.5s ease;
+      z-index: 10;
+    }
+
+    .show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .time-box {
+      font-size: 30px;
+      font-weight: bold;
+      background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00);
+      -webkit-background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 20px rgba(255,255,255,0.4);
+      animation: glow 1.5s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #ff00ff; }
+      to { text-shadow: 0 0 20px #00ffff; }
+    }
+
+    .emoji {
+      position: absolute;
+      font-size: 25px;
+      animation: rise 5s linear forwards;
+      pointer-events: none;
+    }
+
+    @keyframes rise {
+      from {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      to {
+        transform: translateY(-100vh);
+        opacity: 0;
+      }
+    }

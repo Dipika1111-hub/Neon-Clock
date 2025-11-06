@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Custom Neon Clock</title>
+  <link rel="stylesheet" href="ModernClock.css">
+</head>
+<body>
+  <div class="clock" id="clock">
+    <div class="center"></div>
+    <div class="hand hour" id="hour"></div>
+    <div class="hand minute" id="minute"></div>
+    <div class="hand second" id="second"></div>
+  </div>
+
+  <div class="controls">
+    <button id="showInfoBtn">Show Date 🎵</button>
+    <button id="showTimeBtn">Show Exact Time ⏰</button>
+    <button id="stopBtn">Stop Clock ⏸️</button>
+    <label for="colorPicker">🎨 Color:</label>
+    <input type="color" id="colorPicker" value="#00bfff" />
+  </div>
+
+  <div class="info-box" id="infoBox"></div>
+  <div class="time-box" id="timeBox"></div>
+
+ 
+
+  <script src="ModernClock.js"></script>
+</body>
+</html>
