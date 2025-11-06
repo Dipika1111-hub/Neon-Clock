@@ -22,7 +22,6 @@ It shows real-time animated clock hands, live digital time, date display and eve
 - `script.js`
 
 ---
-
 ## 🚀 How to Use
 1. Download or clone the repository
 2. Open `index.html` in any browser
